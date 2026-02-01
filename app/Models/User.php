@@ -50,5 +50,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(Profile::class, 'user_id');//hasOne = ការធ្វើ relationship ទៅកាន់ profile one to one
     }
+    
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'user_id');
+    }   
 
 }
